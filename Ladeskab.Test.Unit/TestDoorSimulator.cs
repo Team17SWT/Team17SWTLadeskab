@@ -54,5 +54,21 @@ namespace Ladeskab.Test.Unit
 
             Assert.That(_uut.StateOpen, Is.EqualTo(false));
         }
+
+        [Test]
+        public void LockState_StateSetToLock_LockStateIsTrue()
+        {
+            _uut.LockDoor();
+
+            Assert.That(_uut.StateLock, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void LockState_StateSetToUnlock_LockStateIsFalse()
+        {
+            _uut.UnlockDoor();
+
+            Assert.That(_uut.StateLock, Is.EqualTo(false));
+        }
     }
 }
