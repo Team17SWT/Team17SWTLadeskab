@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KlasseBibliotek.Interfaces
 {
-    public class CurrentEventArgs : EventArgs
+        public class CurrentEventArgs : EventArgs
         {
             // Value in mA (milliAmpere)
             public double Current { set; get; }
@@ -28,5 +28,5 @@ namespace KlasseBibliotek.Interfaces
             // Stop charging
             void StopCharge();
         }
-    }
+    
 }
