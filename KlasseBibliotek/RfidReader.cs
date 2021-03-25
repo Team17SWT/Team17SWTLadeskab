@@ -10,7 +10,7 @@ namespace KlasseBibliotek
     public class RfidReader : IRfidReader
     {
         public bool CurrentStatus { get; set; }
-        public int RFID { get; set; }
+        public int RFID { get;set; }
 
         public event EventHandler<RfidReaderEventArgs> RfidReaderEvent;
 

@@ -8,8 +8,8 @@ namespace KlasseBibliotek.Interfaces
 {
     public class RfidReaderEventArgs : EventArgs
     { 
-        public bool Status { set; get; }
-        public int ReadRFID { get; set; }
+        public bool Status { private get; set; }
+        public int ReadRFID { private get; set; }
     }
     public interface IRfidReader
     {
