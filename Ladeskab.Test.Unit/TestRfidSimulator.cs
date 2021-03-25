@@ -37,6 +37,5 @@ namespace Ladeskab.Test.Unit
 
             Assert.That(_receivedRfidEventArgs.ReadRFID, Is.EqualTo(5));
         }
-
     }
 }
