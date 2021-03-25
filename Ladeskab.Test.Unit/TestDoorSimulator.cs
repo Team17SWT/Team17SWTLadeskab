@@ -43,7 +43,7 @@ namespace Ladeskab.Test.Unit
         {
             _uut.OnDoorOpen();
 
-            Assert.That(_uut.StateOpen, Is.EqualTo(true));
+            Assert.That(_receivedDoorEventArgs.State, Is.EqualTo(true));
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace Ladeskab.Test.Unit
         {
             _uut.OnDoorClose();
 
-            Assert.That(_uut.StateOpen, Is.EqualTo(false));
+            Assert.That(_receivedDoorEventArgs.State, Is.EqualTo(false));
         }
 
         [Test]
