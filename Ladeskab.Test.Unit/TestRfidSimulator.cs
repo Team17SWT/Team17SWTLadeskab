@@ -37,12 +37,5 @@ namespace Ladeskab.Test.Unit
 
             Assert.That(_receivedRfidEventArgs.ReadRFID, Is.EqualTo(5));
         }
-
-        [Test]
-        public void RfidStatus_StatusSetToTrue_CurrentStatusIsTrue()
-        {
-            _uut.OnRfidRead(5);
-            Assert.That(_uut.CurrentStatus, Is.EqualTo(true));
-        }
     }
 }
