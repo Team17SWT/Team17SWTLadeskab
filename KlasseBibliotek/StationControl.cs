@@ -22,7 +22,6 @@ namespace Ladeskab
 
         // Her mangler flere member variable
         private LadeskabState _state;
-        //private IChargeControl _charger;
         private int _oldId;
         private IDoor _door;
         private IRfidReader _rfidReader;
@@ -59,7 +58,7 @@ namespace Ladeskab
         //            }
         //            else
         //            {
-        //                Console.WriteLine("Din telefon er ikke ordentlig tilsluttet. Prøv igen.");
+        //                _display.ShowConnectionError();
         //            }
 
         //            break;
@@ -72,7 +71,7 @@ namespace Ladeskab
         //            // Check for correct ID
         //            if (id == _oldId)
         //            {
-        //                _charger.StopCharge();
+        //                _chargeControl.StopCharge();
         //                _door.UnlockDoor();
         //                _logFile.LogDoorUnlocked(id);
 
