@@ -19,7 +19,7 @@ namespace Ladeskab.Test.Unit
 
         public void ConnectPhone_MessageIsCorrect_MessageIsConnectPhone()
         {
-            _uut.ShowCharging();
+            _uut.ShowConnectPhone();
 
             Assert.That(_uut._message, Is.EqualTo("Tilslut Telefon"));
         }
