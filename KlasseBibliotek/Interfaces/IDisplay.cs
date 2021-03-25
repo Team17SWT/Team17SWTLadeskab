@@ -10,6 +10,8 @@
         void ShowRemovePhone();
         void ShowFullyCharged();
         void ShowCharging();
-        void ShowStopCharging();
+        void ShowErrorCharging();
+
+        void ShowStopCharge();
     }
 }

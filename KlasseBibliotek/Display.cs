@@ -54,9 +54,15 @@ namespace KlasseBibliotek
             Console.WriteLine(_message);
         }
 
-        public void ShowStopCharging()
+        public void ShowErrorCharging()
         {
             _message = "Fejl i ladning";
+            Console.WriteLine(_message);
+        }
+
+        public void ShowStopCharge()
+        {
+            _message = "Ladning stoppet";
             Console.WriteLine(_message);
         }
     }

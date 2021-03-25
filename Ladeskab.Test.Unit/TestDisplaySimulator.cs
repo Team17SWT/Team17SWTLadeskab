@@ -89,11 +89,20 @@ namespace Ladeskab.Test.Unit
 
         [Test]
 
-        public void RfidRead_MessageIsCorrect_MessageIsStopCharging()
+        public void RfidRead_MessageIsCorrect_MessageIsErrorCharging()
         {
-            _uut.ShowStopCharging();
+            _uut.ShowErrorCharging();
 
             Assert.That(_uut._message, Is.EqualTo("Fejl i ladning"));
+        }
+
+        [Test]
+
+        public void RfidRead_MessageIsCorrect_MessageIsStopCharging()
+        {
+            _uut.ShowStopCharge();
+
+            Assert.That(_uut._message, Is.EqualTo("Ladning stoppet"));
         }
 
 
