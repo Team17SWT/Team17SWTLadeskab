@@ -5,13 +5,14 @@ namespace KlasseBibliotek
 {
     public class ChargeControl : IChargeControl
     {
-        private IUsbCharger _usbCharger;
+        private readonly IUsbCharger _usbCharger;
 
-        private IDisplay _display;
+        private readonly IDisplay _display;
 
-        public ChargeControl(IDisplay aDisplay)
+        public ChargeControl(IDisplay display, IUsbCharger usbCharger)
         {
-            _display = aDisplay;
+            _display = display;
+            _usbCharger = usbCharger;
             _usbCharger.CurrentValueEvent += HandleUsbChangedEvent;
         }
         public bool IsConnected()

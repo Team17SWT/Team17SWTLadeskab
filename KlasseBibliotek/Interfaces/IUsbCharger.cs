@@ -27,6 +27,7 @@ namespace KlasseBibliotek.Interfaces
             void StartCharge();
             // Stop charging
             void StopCharge();
+        
         }
     
 }

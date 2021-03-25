@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KlasseBibliotek;
 using KlasseBibliotek.Interfaces;
+using UsbSimulator;
 
 namespace Ladeskab
 {
@@ -27,7 +28,7 @@ namespace Ladeskab
         private IRfidReader _rfidReader;
         private ILogFile _logFile;
         private static IDisplay _display;
-        private IChargeControl _chargeControl = new ChargeControl(_display);
+        private IChargeControl _chargeControl = new ChargeControl(new Display(), new UsbChargerSimulator());
         private bool CurrentStateDoor { get; set; }
 
         private string logFile = "logfile.txt"; // Navnet på systemets log-fil
