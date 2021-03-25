@@ -4,12 +4,7 @@ namespace KlasseBibliotek.Interfaces
 {
     public class DoorChangedEventArgs : EventArgs
     {
-        private bool state;
-
-        public bool State
-        {
-            set { state = value; }
-        }
+        public bool State { get; set; }
     }
     public interface IDoor
     {

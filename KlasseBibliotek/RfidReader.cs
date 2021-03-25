@@ -9,7 +9,6 @@ namespace KlasseBibliotek
 {
     public class RfidReader : IRfidReader
     {
-        public bool CurrentStatus { get; set; }
         public int RFID { get;set; }
 
         public event EventHandler<RfidReaderEventArgs> RfidReaderEvent;
@@ -17,9 +16,8 @@ namespace KlasseBibliotek
         public void OnRfidRead(int id)
         {
             RFID = id;
-            CurrentStatus = true;
-            RfidReaderEvent?.Invoke(this, new RfidReaderEventArgs() { Status = this.CurrentStatus, ReadRFID = this.RFID});
-            //CurrentStatus = false;
+           
+            RfidReaderEvent?.Invoke(this, new RfidReaderEventArgs() { ReadRFID = this.RFID});
         }
     }
 }

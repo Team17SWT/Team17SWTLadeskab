@@ -35,7 +35,7 @@ namespace Ladeskab.Test.Unit
         {
             _uut.OnRfidRead(5);
 
-            Assert.That(_uut.RFID, Is.EqualTo(5));
+            Assert.That(_receivedRfidEventArgs.ReadRFID, Is.EqualTo(5));
         }
 
         [Test]

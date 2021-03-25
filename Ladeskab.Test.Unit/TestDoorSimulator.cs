@@ -20,7 +20,6 @@ namespace Ladeskab.Test.Unit
             {
                 _receivedDoorEventArgs = args;
             };
-
         }
 
         [Test]

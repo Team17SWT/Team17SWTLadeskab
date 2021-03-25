@@ -9,19 +9,7 @@ namespace KlasseBibliotek.Interfaces
 {
     public class RfidReaderEventArgs : EventArgs
     {
-        private bool status;
-
-        public bool Status
-        {
-            set { status = value; }
-        }
-
-        private int readRFID;
-
-        public int ReadRFID
-        {
-            set { readRFID = value; }
-        }
+        public int ReadRFID { get; set; }
     }
 
     public interface IRfidReader
