@@ -10,7 +10,8 @@ namespace KlasseBibliotek
 {
     public class LogFile : ILogFile
     {
-        private string logFile = "logfile.txt";
+        static string logFile = "logfile.txt";
+        
 
         public void LogDoorLocked(int id)
         {
