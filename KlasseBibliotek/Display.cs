@@ -26,7 +26,7 @@ namespace KlasseBibliotek
 
         public void ShowOccupied()
         {
-            _message = "Ladeskab Optaget";
+            _message = "Ladeskab Optaget, indlæs RFID for at låse op";
             Console.WriteLine(_message);
         }
 
@@ -65,5 +65,6 @@ namespace KlasseBibliotek
             _message = "Ladning stoppet";
             Console.WriteLine(_message);
         }
+
     }
 }

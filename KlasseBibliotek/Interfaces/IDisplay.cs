@@ -11,7 +11,7 @@
         void ShowFullyCharged();
         void ShowCharging();
         void ShowErrorCharging();
-
         void ShowStopCharge();
+       
     }
 }

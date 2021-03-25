@@ -48,7 +48,7 @@ namespace Ladeskab.Test.Unit
         {
             _uut.ShowOccupied();
 
-            Assert.That(_uut._message, Is.EqualTo("Ladeskab Optaget"));
+            Assert.That(_uut._message, Is.EqualTo("Ladeskab Optaget, indlæs RFID for at låse op"));
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace Ladeskab.Test.Unit
             Assert.That(_uut._message, Is.EqualTo("Ladning stoppet"));
         }
 
-
+       
 
 
 
