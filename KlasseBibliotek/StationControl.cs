@@ -36,6 +36,7 @@ namespace Ladeskab
         public StationControl()
         {
             _door.DoorChangedEvent += HandleDoorChangedEvent;
+            _rfidReader.RfidReaderEvent += HandleRfidStatusEvent;
         }
 
         // Eksempel på event handler for eventet "RFID Detected" fra tilstandsdiagrammet for klassen
@@ -119,12 +120,12 @@ namespace Ladeskab
             }
         }
 
-        //private void HandleRfidStatusEvent(object sender, RfidReaderEventArgs e)
-        //{
-        //    if (_state == LadeskabState.Available || _state == LadeskabState.Locked)
-        //    {
-        //        RfidDetected(e.ReadRFID);
-        //    }
-        //}
+        private void HandleRfidStatusEvent(object sender, RfidReaderEventArgs e)
+        {
+            if (_state == LadeskabState.Available || _state == LadeskabState.Locked)
+            {
+                //RfidDetected(e.ReadRFID);
+            }
+        }
     }
 }
