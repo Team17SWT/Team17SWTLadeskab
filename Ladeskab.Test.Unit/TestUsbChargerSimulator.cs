@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using KlasseBibliotek.Interfaces;
 
 namespace UsbSimulator.Test
 {
@@ -12,10 +13,17 @@ namespace UsbSimulator.Test
     public class TestUsbChargerSimulator
     {
         private UsbChargerSimulator _uut;
+        private CurrentEventArgs _receivedUsbEventArgs;
         [SetUp]
         public void Setup()
         {
+            _receivedUsbEventArgs = null;
             _uut = new UsbChargerSimulator();
+            _uut.CurrentValueEvent += (o, args) =>
+            {
+                _receivedUsbEventArgs = args;
+            };
+
         }
 
         [Test]
@@ -230,8 +238,19 @@ namespace UsbSimulator.Test
             // No new value received
             Assert.That(lastValue, Is.EqualTo(1000.0));
         }
+        [Test]
+        public void UsbCurrent_PhoneConnectedStartCharge_EventRaised()
+        {
+            _uut.StartCharge();
+            Assert.That(_receivedUsbEventArgs, Is.Not.Null);
+        }
 
-
+        [Test]
+        public void UsbCurrent_PhoneConnectedStopCharge_EventRaised()
+        {
+            _uut.StopCharge();
+            Assert.That(_receivedUsbEventArgs, Is.Not.Null);
+        }
 
     }
 }
