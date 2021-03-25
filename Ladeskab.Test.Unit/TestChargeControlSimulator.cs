@@ -59,6 +59,26 @@ namespace Ladeskab.Test.Unit
             _display.Received().ShowStopCharge();
         }
 
+        [Test]
+
+        public void HandleEvent_Between0and5_EventCalled()
+        {
+            _uut.HandleUsbChangedEvent(this, new CurrentEventArgs() { Current = 3.0 });
+
+            _display.Received().ShowFullyCharged();
+
+        }
+
+        [Test]
+
+        public void HandleEvent_Over500_EventCalled()
+        {
+            _uut.HandleUsbChangedEvent(this, new CurrentEventArgs() {Current = 600.0});
+            
+            _display.Received().ShowErrorCharging();
+
+        }
+
 
 
 

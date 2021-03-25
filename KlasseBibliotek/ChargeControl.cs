@@ -1,4 +1,5 @@
-﻿using KlasseBibliotek.Interfaces;
+﻿using System;
+using KlasseBibliotek.Interfaces;
 using UsbSimulator;
 
 namespace KlasseBibliotek
@@ -41,9 +42,9 @@ namespace KlasseBibliotek
             _display.ShowStopCharge();
         }
 
-        private void HandleUsbChangedEvent(object sender, CurrentEventArgs e)
+        public void HandleUsbChangedEvent(object sender, CurrentEventArgs e)
         {
-            if (e.Current > 0.0 && e.Current <= 5.0)
+            if (e.Current > 0 && e.Current <= 5.0)
             {
                 StopCharge();
                 _display.ShowFullyCharged();
