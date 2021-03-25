@@ -119,5 +119,13 @@ namespace Ladeskab
                 //_display.ShowReadRfid();
             }
         }
+
+        private void HandleRfidStatusEvent(object sender, RfidReaderEventArgs e)
+        {
+            if (_state == LadeskabState.Available || _state == LadeskabState.Locked)
+            {
+                //RfidDetected(e.ReadRFID);
+            }
+        }
     }
 }

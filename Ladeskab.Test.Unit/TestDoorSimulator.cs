@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Ladeskab.Test.Unit
 {
-    public class Tests
+    public class TestDoor
     {
         private Door _uut;
         private DoorChangedEventArgs _receivedDoorEventArgs;

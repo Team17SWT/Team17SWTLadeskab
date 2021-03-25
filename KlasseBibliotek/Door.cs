@@ -10,7 +10,6 @@ namespace KlasseBibliotek
         public bool StateLock { get; set; }
 
 
-
         public event EventHandler<DoorChangedEventArgs> DoorChangedEvent;
 
         public void OnDoorOpen()
