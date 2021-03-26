@@ -43,9 +43,16 @@ namespace Ladeskab
                     case 'R':
                         System.Console.WriteLine("Indtast RFID id: ");
                         string idString = System.Console.ReadLine();
-
-                        int id = Convert.ToInt32(idString);
-                        rfidReader.OnRfidRead(id);
+                        try
+                        {
+                            int id = Convert.ToInt32(idString);
+                            rfidReader.OnRfidRead(id);
+                        }
+                        catch (FormatException e)
+                        {
+                            Console.WriteLine("Invalid Input, try again!");
+                        }
+                        ;
                         break;
 
                     default:
