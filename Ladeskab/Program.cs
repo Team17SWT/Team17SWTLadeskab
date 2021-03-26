@@ -50,7 +50,7 @@ namespace Ladeskab
                         }
                         catch (FormatException e)
                         {
-                            Console.WriteLine("Invalid Input, try again!");
+                            Console.WriteLine("Invalid Input, prøv igen!");
                         }
                         ;
                         break;

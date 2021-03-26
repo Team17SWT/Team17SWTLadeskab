@@ -94,5 +94,7 @@ namespace Ladeskab.Test.Unit
 
             _display.Received().ShowConnectionError();
         }
+
+
     }
 }
