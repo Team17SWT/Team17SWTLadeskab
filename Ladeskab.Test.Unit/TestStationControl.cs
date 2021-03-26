@@ -51,12 +51,21 @@ namespace Ladeskab.Test.Unit
 
         [Test]
 
-        public void StationControl_CheckCurrentDoorCorrect_EventCalled()
+        public void StationControl_CheckOpenDoor_EventCalled()
         {
             _uut.HandleDoorChangedEvent(this, new DoorChangedEventArgs() {State = true});
 
-            Assert.That(_uut._state,Is.EqualTo(StationControl.LadeskabState.DoorOpen));
             _display.Received().ShowConnectPhone();
+        }
+
+        [Test]
+
+        public void StationControl_CheckCloseDoor_EventCalled()
+        {
+            _uut.DoorOpened();
+            _uut.HandleDoorChangedEvent(this, new DoorChangedEventArgs() {State = false});
+
+            _display.Received().ShowReadRfid();
         }
     }
 }
