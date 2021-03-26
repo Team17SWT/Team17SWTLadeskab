@@ -40,6 +40,7 @@ namespace Ladeskab.Test.Unit
 
         }
 
+        [Test]
         public void StationControl_CheckIdNotCorrect_ReturnsFalse()
         {
             var checkId = _uut.CheckId(1, 2);
