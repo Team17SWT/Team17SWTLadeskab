@@ -6,9 +6,9 @@ namespace KlasseBibliotek.Interfaces
     {
         public bool State { get; set; }
     }
+
     public interface IDoor
     {
-
         event EventHandler<DoorChangedEventArgs> DoorChangedEvent;
         void OnDoorOpen();
         void OnDoorClose();

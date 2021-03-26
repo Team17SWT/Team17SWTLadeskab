@@ -3,6 +3,8 @@ using KlasseBibliotek.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 
+//TEST 
+
 namespace Ladeskab.Test.Unit
 {
     public class TestChargeControlSimulator
