@@ -67,5 +67,32 @@ namespace Ladeskab.Test.Unit
 
             _display.Received().ShowReadRfid();
         }
+
+        [Test]
+
+        public void StationControl_RfidReadPhoneConnected_EventCalled()
+        {
+            _chargeControl.IsConnected().Returns(true);
+
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 1 });
+
+            Assert.Multiple(() =>
+            {
+                _door.Received().LockDoor();
+                _chargeControl.Received().StartCharge();
+                _logFile.Received().LogDoorLocked(1);
+                _display.Received().ShowOccupied();
+            });
+        }
+
+        [Test]
+
+        public void StationControl_RfidReadPhoneIsNotConnected_EventCalled()
+        {
+            
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 1 });
+
+            _display.Received().ShowConnectionError();
+        }
     }
 }
