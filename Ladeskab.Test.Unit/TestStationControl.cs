@@ -94,5 +94,42 @@ namespace Ladeskab.Test.Unit
 
             _display.Received().ShowConnectionError();
         }
+
+        [Test]
+        public void StationControl_ReadRFIDSameRFID_EventCalled()
+        {
+            _chargeControl.IsConnected().Returns(true);
+
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 1 });
+
+            //reads tag again
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 1 });
+
+
+            Assert.Multiple(() =>
+            {
+                _chargeControl.Received().StopCharge();
+                _door.Received().UnlockDoor();
+                _logFile.Received().LogDoorUnlocked(1);
+                _display.Received().ShowRemovePhone();
+            });
+        }
+
+        [Test]
+        public void StationControl_ReadRFIDNotSameRFID_EventCalled()
+        {
+            _chargeControl.IsConnected().Returns(true);
+
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 1 });
+
+            //reads tag again
+            _uut.HandleRfidStatusEvent(this, new RfidReaderEventArgs() { ReadRFID = 2 });
+
+
+            Assert.Multiple(() =>
+            {
+                _display.Received().ShowRfidError();
+            });
+        }
     }
 }
