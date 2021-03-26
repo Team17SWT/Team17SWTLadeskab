@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Ladeskab.Test.Unit
 {
-    public class TestDisplaySimulator
+    public class TestDisplay
     {
         private Display _uut;
 

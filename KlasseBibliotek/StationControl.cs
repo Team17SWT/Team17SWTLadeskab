@@ -93,10 +93,12 @@ namespace Ladeskab
             }
         }
 
-        private bool CheckId(int oldId, int id)
+        public bool CheckId(int oldId, int id)
         {
-            if (id == _oldId)
+            if (id == oldId)
+            {
                 return true;
+            }
             else
             {
                 return false;
@@ -104,7 +106,7 @@ namespace Ladeskab
         }
 
         // Her mangler de andre trigger handlere
-        private void HandleDoorChangedEvent(object sender, DoorChangedEventArgs e)
+        public void HandleDoorChangedEvent(object sender, DoorChangedEventArgs e)
         {
             CurrentStateDoor = e.State;
 
@@ -136,7 +138,7 @@ namespace Ladeskab
             }
         }
 
-        private void HandleRfidStatusEvent(object sender, RfidReaderEventArgs e)
+        public void HandleRfidStatusEvent(object sender, RfidReaderEventArgs e)
         {
             if (_state == LadeskabState.Available || _state == LadeskabState.Locked)
             {
